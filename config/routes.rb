@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/auth/:provider/callback', to: 'sessions#github_create'
   get '/auth/:provider/callback', to: 'sessions#google_create'
+  get '/auth/:provider/callback', to: 'sessions#twitter_create'
   get 'auth/failure', to: redirect('/')
 
   resources :podcasts
