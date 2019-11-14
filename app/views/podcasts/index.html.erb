@@ -1,1 +1,6 @@
 <h1>Hi <%=@user.username%>! You're logged in using <%=@user.provider.capitalize %> </h1>
+<ol>
+  <% @podcasts.each do |p| %>
+    <li><%= p.name %></li>
+  <% end %>
+</ol>
