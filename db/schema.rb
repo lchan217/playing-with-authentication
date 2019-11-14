@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 2019_11_14_010309) do
     t.string "email"
     t.string "uid"
     t.string "username"
+    t.string "password"
+    t.string "password_digest"
     t.string "provider"
     t.string "oauth_token"
   end
