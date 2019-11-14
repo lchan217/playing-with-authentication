@@ -10,5 +10,7 @@ Resources:
 Github: https://richonrails.com/articles/github-authentication-in-ruby-on-rails
 Google: https://medium.com/@amoschoo/google-oauth-for-ruby-on-rails-129ce7196f35
 
+
 Notes:
 For sessions controller - change class method name to match method in user model
+LinkedIn - cannot create an app unless it's associated with a company 
