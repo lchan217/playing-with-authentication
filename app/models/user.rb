@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_secure_password
   def self.from_github_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
      user.email = auth.info.email
