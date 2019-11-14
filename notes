@@ -1,0 +1,14 @@
+NEED:
+Log out Button
+Links for logging into using omni auth
+
+User logs in and sees list of their favorite podcasts (Index)
+Clicking on each podcast - show details
+
+
+Resources:
+Github: https://richonrails.com/articles/github-authentication-in-ruby-on-rails
+Google: https://medium.com/@amoschoo/google-oauth-for-ruby-on-rails-129ce7196f35
+
+Notes:
+For sessions controller - change class method name to match method in user model
