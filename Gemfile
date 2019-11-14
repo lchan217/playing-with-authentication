@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 #authentication gems
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'omniauth-linkedin-oauth2'
 gem 'omniauth'
 gem 'dotenv-rails'
 
