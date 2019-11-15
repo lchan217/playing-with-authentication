@@ -22,6 +22,7 @@ class User < ApplicationRecord
     where(email: auth.info.email).first_or_initialize do |user|
       user.name = auth.info.name
       user.email = auth.info.email
+      user.password = SecureRandom.hex
     end
   end
 
