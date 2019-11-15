@@ -26,6 +26,9 @@ class SessionsController < ApplicationController
     if auth_hash = request.env["omniauth.auth"]
       @user = User.from_twitter_hash(auth_hash)
       session[:user_id] = @user.id
+      @user.username = @user.name
+      @user.password = SecureRandom.hex
+      @user.save
       redirect_to podcasts_path
     else
       redirect_to root_path
