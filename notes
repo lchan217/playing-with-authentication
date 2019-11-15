@@ -6,14 +6,21 @@ Bootstrap - will allow to use twitter/google/github icons
 User logs in and sees list of their favorite podcasts (Index)
 Clicking on each podcast - show details
 
+ISSUES:
+- When you log in with google, sometimes provider is showing up as github or twitter
+- find a way to catch duplicate users... if they login in first with github, they shouldn't
+be allowed to login with google
+  - twitter doesn't have an email field, butgithub and google do. hard to prevent this problem if fields
+  arent the same
 
-Resources:
+
+RESOURCES:
 Github: https://richonrails.com/articles/github-authentication-in-ruby-on-rails
 Google: https://medium.com/@amoschoo/google-oauth-for-ruby-on-rails-129ce7196f35
 Twitter: https://code.tutsplus.com/tutorials/twitter-sign-in-for-rails-application--cms-28097
   https://github.com/arunagw/omniauth-twitter
 
-Notes:
+NOTES:
 For sessions controller - change class method name to match method in user model
 LinkedIn - as of 11/14/19, cannot create an app unless it's associated with a company
 Instagram - as of 11/14/19, they discontinued the APi
