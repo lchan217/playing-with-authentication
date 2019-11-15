@@ -32,6 +32,8 @@ class User < ApplicationRecord
       user.profile_image = auth_hash.info.image
       user.token = auth_hash.credentials.token
       user.secret = auth_hash.credentials.secret
+      user.username = auth_hash.info.name
+      user.password = SecureRandom.hex
     end
   end
 end
