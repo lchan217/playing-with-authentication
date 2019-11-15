@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get '/auth/twitter/callback', to: 'sessions#twitter_create'
   get 'auth/failure', to: redirect('/')
 
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+
   resources :podcasts
   resources :users
 end
