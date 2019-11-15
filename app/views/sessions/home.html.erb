@@ -3,4 +3,8 @@
  <%= link_to 'Sign In with Google', '/auth/google_oauth2' %><br>
  <%= link_to 'Sign In with Twitter', '/auth/twitter' %><br>
  link to email form
- 
+
+<h1> errors? </h1>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>

@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def github_create
     if auth_hash = request.env["omniauth.auth"]
       @user = User.from_github_omniauth(auth_hash)
+      @user.save
       session[:user_id] = @user.id
       redirect_to podcasts_path
     else
@@ -15,10 +16,12 @@ class SessionsController < ApplicationController
       user.google_token = access_token.credentials.token
       refresh_token = access_token.credentials.refresh_token
       user.google_refresh_token = refresh_token if refresh_token.present?
-      user.save
-      redirect_to podcasts_path
-    else
-      redirect_to root_path
+      if user.save
+        redirect_to podcasts_path
+      else
+        flash[:notice] = 'Username is already taken or registered using another social media account. Please try again.'
+        redirect_to root_path
+      end
     end
   end
 
