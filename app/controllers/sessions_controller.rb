@@ -13,10 +13,10 @@ class SessionsController < ApplicationController
   end
 
   def google_create
-    if access_token = request.env["omniauth.auth"]
-      @user = User.from_google_omniauth(access_token)
-      @user.google_token = access_token.credentials.token
-      refresh_token = access_token.credentials.refresh_token
+    if auth_hash = request.env["omniauth.auth"]
+      @user = User.from_google_omniauth(auth_hash)
+      @user.google_token = auth_hash.credentials.token
+      refresh_token = auth_hash.credentials.refresh_token
       @user.google_refresh_token = refresh_token if refresh_token.present?
       if @user.save
         session[:user_id] = @user.id

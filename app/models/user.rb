@@ -26,13 +26,13 @@ class User < ApplicationRecord
     end
   end
 
-  def self.from_twitter_hash(auth_hash)
-    where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_initialize do |user|
-      user.name = auth_hash.info.nickname
-      user.profile_image = auth_hash.info.image
-      user.token = auth_hash.credentials.token
-      user.secret = auth_hash.credentials.secret
-      user.username = auth_hash.info.name
+  def self.from_twitter_hash(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize do |user|
+      user.name = auth.info.nickname
+      user.profile_image = auth.info.image
+      user.token = auth.credentials.token
+      user.secret = auth.credentials.secret
+      user.username = auth.info.name
       user.password = SecureRandom.hex
     end
   end
