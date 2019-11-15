@@ -2,6 +2,9 @@ class User < ApplicationRecord
   has_many :podcasts
   has_secure_password
 
+  validates :username, presence: true
+  validates :username, uniqueness: true
+
   def self.from_github_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
      user.email = auth.info.email
@@ -11,7 +14,6 @@ class User < ApplicationRecord
      user.username = auth.info.name
      user.oauth_token = auth.credentials.token
      user.password = SecureRandom.hex
-     user.save!
    end
   end
 
