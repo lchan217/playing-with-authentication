@@ -3,7 +3,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :username, presence: true
-  validates :username, uniqueness: true
+  # validates :username, uniqueness: true
 
   def self.from_github_omniauth(auth)
    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
