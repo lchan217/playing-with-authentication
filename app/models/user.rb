@@ -27,10 +27,10 @@ class User < ApplicationRecord
 
   def self.from_twitter_hash(auth_hash)
     where(provider: auth_hash.provider, uid: auth_hash.uid).first_or_initialize do |user|
-      user.name: auth_hash.info.nickname
-      user.profile_image: auth_hash.info.image
-      user.token: auth_hash.credentials.token
-      user.secret: auth_hash.credentials.secret
+      user.name = auth_hash.info.nickname
+      user.profile_image = auth_hash.info.image
+      user.token = auth_hash.credentials.token
+      user.secret = auth_hash.credentials.secret
     end
   end
 end
