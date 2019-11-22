@@ -1,0 +1,14 @@
+<%= form_for podcast do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :host %>
+  <%= f.text_field :host %> <br>
+
+  <%= f.label :category %>
+  <%= f.select :category, options_for_select(["", "Comedy", "Society & Culture", "Sports & Rec", "News & Politics", "True Crime", "Arts","Tv & Film", "Education", "Others"], podcast.category)%> <br>
+
+  <%= f.hidden_field :user_id, :value => @user.id %>
+
+  <%= f.submit %>
+<% end %>

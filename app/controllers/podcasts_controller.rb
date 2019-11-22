@@ -3,4 +3,9 @@ class PodcastsController < ApplicationController
     @user = current_user
     @podcasts = current_user.podcasts
   end
+
+  def new
+    @podcast = Podcast.new
+    @user = current_user
+  end
 end
