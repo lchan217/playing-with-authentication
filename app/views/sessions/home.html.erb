@@ -1,21 +1,23 @@
-<h1 class='heading-for-signin'>Sign in </h1>
+<div class="home-wrapper">
+  <h1>Sign in </h1>
 
-<%= form_for :user, url: '/login', method: :post do |f| %>
-   <%= f.label :username%>
-   <%= f.text_field :username %><br>
+  <%= form_for :user, url: '/login', method: :post do |f| %>
+    <%= f.label :username%>
+    <%= f.text_field :username %><br>
 
-   <%= f.label :password%>
-   <%= f.password_field :password %><br>
+    <%= f.label :password%>
+    <%= f.password_field :password %><br>
 
-   <%= f.submit "Login" ,class: 'btn btn-primary'%>
-<% end %>
+    <%= f.submit "Login" ,class: 'btn btn-primary'%>
+  <% end %>
+  <br>
+  <%= link_to 'Sign In with Github', '/auth/github' %><br>
+  <%= link_to 'Sign In with Google', '/auth/google_oauth2' %><br>
+  <%= link_to 'Sign In with Twitter', '/auth/twitter' %><br>
+  <%= link_to 'Sign Up with Username', '/signup' %>
 
- <%= link_to 'Sign In with Github', '/auth/github' %><br>
- <%= link_to 'Sign In with Google', '/auth/google_oauth2' %><br>
- <%= link_to 'Sign In with Twitter', '/auth/twitter' %><br>
- <%= link_to 'Sign Up with Username', '/signup' %>
-
-<h1> errors? </h1>
-<% if flash[:notice] %>
-  <%= flash[:notice] %>
-<% end %>
+  <h1> errors? </h1>
+  <% if flash[:notice] %>
+    <%= flash[:notice] %>
+  <% end %>
+</div>
