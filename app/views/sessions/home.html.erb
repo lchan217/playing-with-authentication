@@ -11,10 +11,12 @@
     <%= f.submit "Login" ,class: 'btn btn-primary'%>
   <% end %>
   <br>
-  <%= link_to 'Sign In with Github', '/auth/github' %><br>
-  <%= link_to 'Sign In with Google', '/auth/google_oauth2' %><br>
-  <%= link_to 'Sign In with Twitter', '/auth/twitter' %><br>
-  <%= link_to 'Sign Up with Username', '/signup' %>
+
+    <%= link_to "Sign In With #{fa_icon "github"}".html_safe, '/auth/github',:class => "btn btn-light" %>
+    <%= link_to "Sign In With #{fa_icon "google"}".html_safe, '/auth/google_oauth2', :class => "btn btn-light"%>
+    <%= link_to "Sign In With #{fa_icon "twitter"}".html_safe, '/auth/twitter', :class => "btn btn-light" %>
+    <%= link_to "Sign In With #{fa_icon "user-plus"}".html_safe, '/signup', :class => "btn btn-light" %> 
+
 
   <h1> errors? </h1>
   <% if flash[:notice] %>
