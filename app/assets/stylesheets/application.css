@@ -29,5 +29,11 @@
 }
 
 .sign-in-button {
-  font-size: 2em;
+  width: 20% !important;
+  margin: 0.5em !important;
+  font-size: 1.2em !important;
+}
+
+.login-error {
+  color: red;
 }

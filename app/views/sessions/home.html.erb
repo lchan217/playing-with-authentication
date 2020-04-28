@@ -12,14 +12,14 @@
   <% end %>
   <br>
 
-    <%= link_to "Sign In With #{fa_icon "github"}".html_safe, '/auth/github',:class => "btn btn-light" %>
-    <%= link_to "Sign In With #{fa_icon "google"}".html_safe, '/auth/google_oauth2', :class => "btn btn-light"%>
-    <%= link_to "Sign In With #{fa_icon "twitter"}".html_safe, '/auth/twitter', :class => "btn btn-light" %>
-    <%= link_to "Sign In With #{fa_icon "user-plus"}".html_safe, '/signup', :class => "btn btn-light" %> 
+    <%= link_to "Sign In #{fa_icon "github"}".html_safe, '/auth/github',:class => "btn btn-secondary sign-in-button" %>
+    <%= link_to "Sign In #{fa_icon "google"}".html_safe, '/auth/google_oauth2', :class => "btn btn-secondary sign-in-button"%>
+    <%= link_to "Sign In #{fa_icon "twitter"}".html_safe, '/auth/twitter', :class => "btn btn-secondary sign-in-button" %>
+    <%= link_to "Sign Up #{fa_icon "user-plus"}".html_safe, '/signup', :class => "btn btn-success sign-in-button" %> 
 
-
-  <h1> errors? </h1>
-  <% if flash[:notice] %>
-    <%= flash[:notice] %>
-  <% end %>
+  <div class='login-error'>
+    <% if flash[:notice] %>
+      <%= flash[:notice] %>
+    <% end %>
+  </div>
 </div>
