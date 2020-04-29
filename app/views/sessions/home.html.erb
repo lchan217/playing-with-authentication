@@ -1,15 +1,16 @@
 <div class="home-wrapper">
   <h1>Sign in </h1>
+  
+    <%= form_for :user, url: '/login', method: :post do |f| %>
+      <%= f.label :username%>
+      <%= f.text_field :username %><br>
 
-  <%= form_for :user, url: '/login', method: :post do |f| %>
-    <%= f.label :username%>
-    <%= f.text_field :username %><br>
+      <%= f.label :password%>
+      <%= f.password_field :password %><br>
 
-    <%= f.label :password%>
-    <%= f.password_field :password %><br>
-
-    <%= f.submit "Login" ,class: 'btn btn-primary'%>
-  <% end %>
+      <%= f.submit "Login" ,class: 'btn btn-primary'%>
+    <% end %>
+  
   <br>
 
     <%= link_to "Sign In #{fa_icon "github"}".html_safe, '/auth/github',:class => "btn btn-secondary sign-in-button" %>
@@ -17,7 +18,7 @@
     <%= link_to "Sign In #{fa_icon "twitter"}".html_safe, '/auth/twitter', :class => "btn btn-secondary sign-in-button" %>
     <%= link_to "Sign Up #{fa_icon "user-plus"}".html_safe, '/signup', :class => "btn btn-success sign-in-button" %> 
 
-  <div class='login-error'>
+  <div class='error'>
     <% if flash[:notice] %>
       <%= flash[:notice] %>
     <% end %>

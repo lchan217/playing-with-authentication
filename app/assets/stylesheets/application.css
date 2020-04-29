@@ -34,6 +34,10 @@
   font-size: 1.2em !important;
 }
 
-.login-error {
+.error {
   color: red;
+}
+
+.sign-up-wrapper {
+  padding-left: 5em;
 }
