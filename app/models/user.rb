@@ -33,7 +33,6 @@ class User < ApplicationRecord
       user.token = auth.credentials.token
       user.secret = auth.credentials.secret
       user.username = auth.info.name
-      user.password = SecureRandom.hex
     end
   end
 end
