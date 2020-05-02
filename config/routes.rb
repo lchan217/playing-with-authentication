@@ -12,6 +12,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   
-  resources :podcasts
+  get '/all', to: 'podcasts#index', as: 'all'
   resources :users
 end

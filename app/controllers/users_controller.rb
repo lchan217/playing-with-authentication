@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
-      redirect_to podcasts_path
+      redirect_to all_path
     else
       flash[:notice] = @user.errors.full_messages
       render :new
