@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   post '/login' => 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-
+  
   resources :podcasts
   resources :users
 end

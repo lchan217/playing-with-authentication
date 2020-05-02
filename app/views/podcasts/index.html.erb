@@ -7,5 +7,7 @@
     <li><%= p.name %></li>
   <% end %>
 </ol>
-<%= link_to "Create A New Podcast", new_podcast_path %> 
-<%= link_to "Logout", logout_path %> 
+
+<%# link_to "Create A New Podcast", new_podcast_path %> 
+<%= link_to "Log Out  #{fa_icon "sign-out"}".html_safe, '/logout',:class => "btn btn-primary sign-out-button" %>
+   

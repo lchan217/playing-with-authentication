@@ -41,3 +41,9 @@
 .sign-up-wrapper {
   padding-left: 5em;
 }
+
+.sign-out-button {
+  width: 20% !important;
+  margin-top: 10% !important;
+  margin-left: 30% !important;
+}
